@@ -1,0 +1,11 @@
+<h1>{{CreateMenuItem.name}}</h1>
+
+<img class="images center" src="/assets/images/{{CreateMenuItem.image}}" width="150px" height="200px" style="cursor: pointer ; " [align]="" />   
+
+<h6 class="text-danger">Are you sure that you want to delete this item</h6>
+  <form #form="ngForm"(ngSubmit)="DeleteMenuItem()">
+    <button type="submit" class="btn btn-success">Yes</button>
+    <a class="btn btn-danger" [routerLink]="['/home']" >No</a>
+   
+</form> 
+<a class="btn btn-success" [routerLink]="['/home']"  style="font-weight: bolder;font-size: larger; float: right;"> Back--></a>

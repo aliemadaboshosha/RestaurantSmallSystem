@@ -1,0 +1,29 @@
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="text-center mb-4">Delete Order</h2>
+        <div class="card p-4">
+          <div class="card-body">
+            <h5 class="card-title text-primary mb-4">Order Details</h5>
+            <ul class="list-group list-group-flush mb-4">
+              <li class="list-group-item"><b>Order ID:</b> {{ order.orderId }}</li>
+              <li class="list-group-item"><b>Customer Name:</b> {{ order.customerName }}</li>
+              <li class="list-group-item"><b>Customer Address:</b> {{ order.customerAddress }}</li>
+              <li class="list-group-item"><b>Customer Email:</b> {{ order.customerEmail }}</li>
+              <li class="list-group-item"><b>Customer Phone:</b> {{ order.customerPhone }}</li>
+              <li class="list-group-item"><b>Order Date:</b> {{ order.orderDate }}</li>
+              <li class="list-group-item"><b>Number of Items:</b> {{ order.numberOfItems }}</li>
+              <li class="list-group-item"><b>Total Price:</b> {{ order.totalPrice }}</li>
+            </ul>
+            <div class="d-flex justify-content-between">
+              <button class="btn btn-danger mr-3" (click)="DeleteOrder()">Delete Order</button>
+              <button class="btn btn-primary" (click)="GoBack()">Go Back</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

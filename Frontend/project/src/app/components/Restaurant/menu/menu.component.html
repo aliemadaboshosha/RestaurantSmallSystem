@@ -1,0 +1,26 @@
+<a class="btn btn-info" style="float: right; font-weight: bold;" [routerLink]="['/addMenuItem']">ADD New Menu Item</a>
+<table class="table" *ngIf="Menu">
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            
+            <th>Number of sizes</th>
+            <th></th><th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of Menu">
+            <td>{{item.menuItemId}}</td>
+            <td><div><img class="images center" src="/assets/images/{{item.image}}" width="120px" style="cursor: pointer ; " [align]="" /></div>   
+
+               <div style="text-align: left; font-weight: bold; ">{{item.name}}</div> </td>
+            
+            <td>{{item.menuItemSizes.length}}</td>
+            <td><a class="btn btn-warning" style="float: right; font-weight: bold;" [routerLink]="['/editMenuItem',item.menuItemId]">Edite</a></td>
+            <td><a class="btn btn-danger" style="float: right; font-weight: bold;" [routerLink]="['/deleteMenuItem',item.menuItemId]">Delete</a></td>
+
+        </tr>
+    </tbody>
+</table>

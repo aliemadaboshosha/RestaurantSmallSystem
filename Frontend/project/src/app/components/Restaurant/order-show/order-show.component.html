@@ -1,0 +1,54 @@
+
+  
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="text-center" style="color: #fd8e33; font-weight: bold; margin-bottom: 30px;">Order Details</h2>
+  
+        <div class="card" style="border-color: #fd8e33;">
+          <div class="card-header" style="background-color: #fd8e33; color: white;">
+            <h5 style="font-weight: bold;">Order ID: {{ order.orderId }}</h5>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title" style="color: #fd8e33; font-weight: bold;">Customer Details</h5>
+            <p class="card-text" style="font-weight: bold;">Name: {{ order.customerName }}</p>
+            <p class="card-text" style="font-weight: bold;">Address: {{ order.customerAddress }}</p>
+            <p class="card-text" style="font-weight: bold;">Email: {{ order.customerEmail }}</p>
+            <p class="card-text" style="font-weight: bold;">Phone: {{ order.customerPhone }}</p>
+            <hr>
+            <h5 class="card-title" style="color: #fd8e33; font-weight: bold;">Order Summary</h5>
+            <p class="card-text" style="font-weight: bold;">Order Date: {{ order.orderDate }}</p>
+            <p class="card-text" style="font-weight: bold;">Number of Items: {{ order.numberOfItems }}</p>
+            <p class="card-text" style="font-weight: bold;">Total Price: {{ order.totalPrice | currency }}</p>
+            <hr>
+            <h5 class="card-title" style="color: #fd8e33; font-weight: bold;">Order Items</h5>
+            <ul class="list-group">
+              <li class="list-group-item" *ngFor="let item of order.items" style="background-color: #F5F5F5;">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <h6 style="color: #fd8e33; font-weight: bold;">{{ item.name }}</h6>
+                    <p style="font-weight: bold;">Size: {{ item.size }}</p>
+                    <p style="font-weight: bold;">Quantity: {{ item.quantity }}</p>
+                  </div>
+                  <div>
+                    <p style="color: #10c222; font-weight: bold;">{{ item.price | currency }}</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <button (click)="finishOrder()" class="btn btn-success" style="float: left;"> finish the Order</button>
+          <br>
+          <button (click)="CancelOrder()" class="btn btn-danger" style="float: right;">Cancel the order and delete it </button>
+
+<br>    
+        </div>
+  
+      </div>
+    </div>
+    
+  </div>
+  
+  
+  
